@@ -6,10 +6,197 @@
     <title>Profile Natah</title>
     <link rel="stylesheet" href="web.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
-
 <body>
+
+    <header>
+        <div class="header-content">
+            <img src="" alt="Profil Mahasiswa" class="profile-pic">
+            <h1>RIZKY NATHANIEL LUKAS</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showContent('biodata')">Biodata</a></li>
+                <li><a href="#" onclick="showContent('pendidikan')">Pendidikan</a></li>
+                <li><a href="#" onclick="showContent('pengalaman')">Pengalaman</a></li>
+                <li><a href="#" onclick="showContent('keahlian')">Keahlian</a></li>
+                <li><a href="#" onclick="showContent('publikasi')">Publikasi</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <div id="biodata" class="content">
+                <h2>Biodata</h2>
+                <div class="card">
+                    <p><strong>NIM:</strong> 2023081023</p>
+                    <p><strong>Nama:</strong> RIZKY NATHANIEL LUKAS</p>
+                    <p><strong>Agama:</strong> Islam</p>
+                    <p><strong>Tanggal Lahir:</strong> 17 September 2004</p>
+                    <p><strong>Tempat Lahir:</strong> Jakarta</p>
+                </div>
+            </div>
+
+            <div id="pendidikan" class="content">
+                <h2>Pendidikan</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2009 - 2010</div>
+                        <div class="timeline-content">
+                            <h3>TK HARAPAN INDAH</h3>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2000 - 2000</div>
+                        <div class="timeline-content">
+                            <h3>SD JELUPANG 1</h3>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">SMP</div>
+                        <div class="timeline-content">
+                            <h3>SMP 22 TANGSEL</h3>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">SMA</div>
+                        <div class="timeline-content">
+                            <h3>SMKN 6 TANGSEL</h3>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">Sekarang</div>
+                        <div class="timeline-content">
+                            <h3>Universitas Pembangunan Jaya</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pengalaman" class="content">
+                <h2>Pengalaman</h2>
+                <ul class="experience-list">
+                    <li>
+                        <i class="icon-calendar"></i>
+                        <strong>Juni 2022 - September 2022</strong> - Internship di PT Maju Jaya
+                        <p>Bekerja sebagai Associate Product Manager, bertanggung jawab dalam pengembangan fitur baru dan pengujian produk.</p>
+                    </li>
+                    <li>
+                        <i class="icon-calendar"></i>
+                        <strong>Juli 2021 - Desember 2021</strong> - Freelance Web Developer
+                        <p>Mengerjakan proyek pengembangan website untuk berbagai klien, termasuk e-commerce dan blog pribadi.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="keahlian" class="content">
+                <h2>Keahlian</h2>
+                <div class="skill">
+                    <h3>Badminton</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>Chinese Language</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>Basic HTML CSS</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 65%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div id="publikasi" class="content">
+                <h2>Publikasi</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Judul Publikasi 1</h3>
+                        <p class="date">12 Januari 2022</p>
+                        <p>Diterbitkan di Jurnal ABC. Publikasi ini membahas...</p>
+                        <a href="#">Lihat publikasi</a>
+                    </div>
+                    <div class="card">
+                        <h3>Judul Publikasi 2</h3>
+                        <p class="date">5 Mei 2023</p>
+                        <p>Disajikan di Conference XYZ. Publikasi ini mengulas...</p>
+                        <a href="#">Lihat publikasi</a>
+                    </div>
+                    <div class="card">
+                        <h3>Judul Publikasi 3</h3>
+                        <p class="date">10 Agustus 2024</p>
+                        <p>Diterbitkan di Jurnal DEF. Makalah ini berfokus pada...</p>
+                        <a href="#">Lihat publikasi</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="hobby-section">
+            <h3>Hobi</h3>
+            <div class="hobby-card">
+                <div class="hobby-item">
+                    <i class="fas fa-basketball-ball"></i>
+                    <p>Baca Buku</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-swimmer"></i>
+                    <p>Music</p>
+                </div>
+                <div class="hobby-item">
+                    <i class="fas fa-code"></i>
+                    <p>Coding</p>
+                </div>
+            </div>
+        </aside>
+        
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <a href="https://www.instagram.com/ykzirnathaniel" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <p>© Copyright 2024. All Rights Reserved</p>
+            <p class="footer-name">Code by Natah.</p>
+        </div>
+    </footer>
     
+
+    <script>
+        function showContent(sectionId) {
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.style.display = 'none';
+    });
+
+    const currentContent = document.getElementById(sectionId);
+    currentContent.style.display = 'block';
+
+    // Tambahkan animasi skill bar jika section yang ditampilkan adalah keahlian
+    if (sectionId === 'keahlian') {
+        const skillBars = document.querySelectorAll('.skill');
+        skillBars.forEach(skill => {
+            skill.classList.add('animate');
+        });
+    }
+}
+    
+        // Menampilkan Biodata secara otomatis saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            showContent('biodata');
+        });
+    </script>
+    
+
 </body>
 </html>
