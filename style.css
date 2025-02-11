@@ -50,7 +50,7 @@
     font-size: 16px;
     font-weight: 400;
     margin-left: 20px;
-    position: relative; /* Enable positioning for pseudo-element */
+    position: relative;
     transition: color 0.3s ease;
   }
   
