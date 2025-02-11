@@ -67,9 +67,9 @@
   }
   
   .navbar-right a:hover::after {
-    width: 100%; /* Expand underline to full width on hover */
+    width: 100%; 
   }
-  
+
   
   /* Home Section Styles */
   .home {
