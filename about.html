@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="./about.css">
 </head>
 <body>
+  <!-- Overlay for Page Transition -->
+  <div id="page-transition-overlay"></div>
+
+  <!-- Canvas for Interactive Background -->
+  <canvas id="interactive-bg"></canvas>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-left">
@@ -24,12 +30,11 @@
 
   <!-- About Section -->
   <section class="about">
-    <p>
-      I am a passionate designer and developer with skills in UI/UX design, website coding, and video editing. I have a deep enthusiasm for learning new things and continuously improving my expertise. Welcome to my portfolio!
+    <p id="about-text">
+      I am a passionate designer and developer with skills in UI/UX design, website coding, and video editing. I have a deep enthusiasm for learning new things and continuously improving my expertise. Let's rock together&#129310;
     </p>
   </section>
 
-  <!-- Blue Light Effect -->
-  <div class="blue-light"></div>
+  <script src="./about.js"></script>
 </body>
 </html>

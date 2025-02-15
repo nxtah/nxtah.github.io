@@ -10,8 +10,41 @@ body {
   background-color: black;
   color: white;
   line-height: 1.6;
-  overflow: hidden; /* Prevent horizontal scrolling during animation */
+  overflow-x: hidden; /* Prevent horizontal scrolling during animation */
   position: relative; /* Enable positioning for child elements */
+}
+
+/* Overlay for Page Transition */
+#page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 9999;
+  transform: scaleX(0); /* Start as invisible */
+  transform-origin: left;
+  transition: transform 0.8s ease-in-out;
+}
+
+#page-transition-overlay.active {
+  transform: scaleX(1); /* Expand to cover the screen */
+}
+
+#page-transition-overlay.exit {
+  transform: scaleX(0); /* Shrink back to invisible */
+  transform-origin: right;
+}
+
+/* Canvas for Interactive Background */
+#interactive-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place behind other content */
 }
 
 /* Navbar Styles */
@@ -20,28 +53,17 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: black;
+  background-color: transparent;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  opacity: 0; /* Start invisible */
-  animation: fadeInNavbar 3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .navbar-left {
   font-size: 14px;
   font-weight: 300;
   color: #ccc;
-  opacity: 0; /* Start invisible */
-  transform: translateX(-100%); /* Start from left */
-  animation: slideInLeft 1.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-}
-
-.navbar-right {
-  opacity: 0; /* Start invisible */
-  transform: translateX(100%); /* Start from right */
-  animation: slideInRight 1.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .navbar-right a {
@@ -50,59 +72,52 @@ body {
   font-size: 16px;
   font-weight: 400;
   margin-left: 20px;
-  position: relative; /* Enable positioning for pseudo-element */
+  position: relative;
   transition: color 0.3s ease;
 }
-.navbar-right a:hover::after {
-  width: 100%; /* Expand underline to full width on hover */
-}
 
-/* Underline Animation */
 .navbar-right a::after {
-  content: ''; /* Create an empty pseudo-element */
+  content: '';
   position: absolute;
   left: 0;
-  bottom: -2px; /* Position below the text */
-  width: 0; /* Start with no width */
-  height: 2px; /* Thickness of the underline */
-  background-color:rgb(38, 0, 255);
-  transition: width 0.3s ease; /* Smooth transition for width */
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: rgb(38, 0, 255);
+  transition: width 0.3s ease;
 }
 
+.navbar-right a:hover::after {
+  width: 100%;
+}
 
 /* About Section Styles */
 .about {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Align text to the left */
+  align-items: center; /* Center horizontally and vertically */
   height: 100vh;
   text-align: left;
   overflow: hidden;
-  padding: 20px;
+  padding: 10px;
+  position: relative; /* Enable positioning for child elements */
+  z-index: 1; /* Ensure it appears above the background */
+  opacity: 0; /* Start invisible */
+  transform: translateY(50px); /* Start from below */
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.about p {
-  font-size: 1.5rem;
+.about.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to normal position */
+}
+
+#about-text {
+  font-size: 2rem;
   font-weight: 400;
-  line-height: 2;
-  max-width: 800px;
-  opacity: 0; /* Start invisible */
-  transform: translateY(100%); /* Start from bottom */
-  animation: slideInUp 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) 1s forwards;
-}
-
-/* Blue Light Effect */
-.blue-light {
-  position: absolute;
-  bottom: -400px; /* Start below the screen */
-  right: -400px; /* Start outside the screen */
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(23, 46, 255, 0.2), rgba(0, 149, 255, 0));
-  border-radius: 50%; /* Make it circular */
-  opacity: 0; /* Start invisible */
-  animation: fadeInBlueLight 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) 1s forwards; /* Delay 3s */
+  max-width: 1000px;
+  position: relative;
 }
 
 /* Animations */
@@ -124,23 +139,5 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-@keyframes slideInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInBlueLight {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0); /* Start position */
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-100px, -100px); /* Move slightly up and left */
   }
 }
